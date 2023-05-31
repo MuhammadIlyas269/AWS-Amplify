@@ -1,0 +1,306 @@
+{
+  "api": {
+    "cognitoApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "CognitoLambdaAPi"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "customAuthApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "todoItems"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "todoIlyas": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "todoItems"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "deleteTodoIlyas"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "todoAddItem"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getItem"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "todoUpdate"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "todoilyase1510957": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "CognitoLambdaAPi": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "customAuthorizerFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "deleteTodoIlyas": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "TodoIlyas"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getItem": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "TodoIlyas"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "todoAddItem": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "TodoIlyas"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "todoItems": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "todoilyase1510957"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "todoUpdate": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "hosting": {},
+  "parameters": {
+    "AMPLIFY_function_CognitoLambdaAPi_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CognitoLambdaAPi"
+        }
+      ]
+    },
+    "AMPLIFY_function_CognitoLambdaAPi_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CognitoLambdaAPi"
+        }
+      ]
+    },
+    "AMPLIFY_function_customAuthorizerFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "customAuthorizerFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_customAuthorizerFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "customAuthorizerFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteTodoIlyas_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteTodoIlyas"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteTodoIlyas_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteTodoIlyas"
+        }
+      ]
+    },
+    "AMPLIFY_function_getItem_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getItem"
+        }
+      ]
+    },
+    "AMPLIFY_function_getItem_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getItem"
+        }
+      ]
+    },
+    "AMPLIFY_function_todoAddItem_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "todoAddItem"
+        }
+      ]
+    },
+    "AMPLIFY_function_todoAddItem_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "todoAddItem"
+        }
+      ]
+    },
+    "AMPLIFY_function_todoItems_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "todoItems"
+        }
+      ]
+    },
+    "AMPLIFY_function_todoItems_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "todoItems"
+        }
+      ]
+    },
+    "AMPLIFY_function_todoUpdate_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "todoUpdate"
+        }
+      ]
+    },
+    "AMPLIFY_function_todoUpdate_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "todoUpdate"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "TodoIlyas": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

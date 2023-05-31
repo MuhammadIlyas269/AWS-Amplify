@@ -1,0 +1,10 @@
+{
+  "resourceName": "TodoIlyas",
+  "tableName": "Todo",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

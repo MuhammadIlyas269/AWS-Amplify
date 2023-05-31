@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "auth": {
+      "todoilyase1510957": [
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

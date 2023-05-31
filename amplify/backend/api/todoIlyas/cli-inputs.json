@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "paths": {
+    "/items": {
+      "name": "/items",
+      "lambdaFunction": "todoItems",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/delete/{id}": {
+      "name": "/delete/{id}",
+      "lambdaFunction": "deleteTodoIlyas",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/add/items": {
+      "name": "/add/items",
+      "lambdaFunction": "todoAddItem",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/get/{id}": {
+      "name": "/get/{id}",
+      "lambdaFunction": "getItem",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/update/item": {
+      "name": "/update/item",
+      "lambdaFunction": "todoUpdate",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

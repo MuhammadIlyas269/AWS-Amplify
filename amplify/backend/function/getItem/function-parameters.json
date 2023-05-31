@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "storage": {
+      "TodoIlyas": [
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
