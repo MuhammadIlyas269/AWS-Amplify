@@ -55,64 +55,9 @@
       },
       "storage": {
         "TodoIlyas": {}
-      }
-    }
-  },
-  "prod": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-todoilyas-prod-151140-authRole",
-      "UnauthRoleArn": "arn:aws:iam::488065772113:role/amplify-todoilyas-prod-151140-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::488065772113:role/amplify-todoilyas-prod-151140-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-todoilyas-prod-151140-deployment",
-      "UnauthRoleName": "amplify-todoilyas-prod-151140-unauthRole",
-      "StackName": "amplify-todoilyas-prod-151140",
-      "StackId": "arn:aws:cloudformation:us-east-1:488065772113:stack/amplify-todoilyas-prod-151140/7561f080-ff9b-11ed-baaf-0ae998d53d6f",
-      "AmplifyAppId": "d33pq02dxd75jv"
-    },
-    "categories": {
-      "auth": {
-        "todoilyase1510957": {}
       },
-      "function": {
-        "CognitoLambdaAPi": {
-          "deploymentBucketName": "amplify-todoilyas-prod-151140-deployment",
-          "s3Key": "amplify-builds/CognitoLambdaAPi-364267585159774d4531-build.zip"
-        },
-        "customAuthorizerFunction": {
-          "deploymentBucketName": "amplify-todoilyas-prod-151140-deployment",
-          "s3Key": "amplify-builds/customAuthorizerFunction-4e6667357169596d456c-build.zip"
-        },
-        "deleteTodoIlyas": {
-          "deploymentBucketName": "amplify-todoilyas-prod-151140-deployment",
-          "s3Key": "amplify-builds/deleteTodoIlyas-764d394e726f656e7275-build.zip"
-        },
-        "getItem": {
-          "deploymentBucketName": "amplify-todoilyas-prod-151140-deployment",
-          "s3Key": "amplify-builds/getItem-774336662f5764574230-build.zip"
-        },
-        "todoAddItem": {
-          "deploymentBucketName": "amplify-todoilyas-prod-151140-deployment",
-          "s3Key": "amplify-builds/todoAddItem-74682b32443935367273-build.zip"
-        },
-        "todoItems": {
-          "deploymentBucketName": "amplify-todoilyas-prod-151140-deployment",
-          "s3Key": "amplify-builds/todoItems-6a535137747873775245-build.zip"
-        },
-        "todoUpdate": {
-          "deploymentBucketName": "amplify-todoilyas-prod-151140-deployment",
-          "s3Key": "amplify-builds/todoUpdate-7257784d427757564b63-build.zip"
-        },
-        "TodoIlyas": {},
-        "todoilyase1510957": {}
-      },
-      "api": {
-        "cognitoApi": {},
-        "customAuthApi": {},
-        "todoIlyas": {}
-      },
-      "storage": {
-        "TodoIlyas": {}
+      "hosting": {
+        "S3AndCloudFront": {}
       }
     }
   }
