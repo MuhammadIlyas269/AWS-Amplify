@@ -46,7 +46,7 @@ const EditTodoForm = () => {
       axios
         .put(
           process.env.REACT_APP_API_BASE_URL +
-            "/api/v1/todo/" +
+            "/update/item/" +
             searchParams.get("id"),
           {
             title: todoTitle,

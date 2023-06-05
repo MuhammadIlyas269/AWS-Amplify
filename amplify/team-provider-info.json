@@ -27,7 +27,7 @@
         },
         "todoUpdate": {
           "deploymentBucketName": "amplify-todoilyas-dev-122010-deployment",
-          "s3Key": "amplify-builds/todoUpdate-7257784d427757564b63-build.zip"
+          "s3Key": "amplify-builds/todoUpdate-4d61642b466e754f6f72-build.zip"
         },
         "todoAddItem": {
           "deploymentBucketName": "amplify-todoilyas-dev-122010-deployment",

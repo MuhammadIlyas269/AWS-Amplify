@@ -22,7 +22,10 @@ exports.handler = async (event) => {
   //   console.log(`EVENT: ${JSON.stringify(event)}`);
   let statusCode = 0;
   let responseBody = "";
-  const id = event.pathParameters.id;
+  const id = event.pathParameters.proxy;
+  console.log(".....", id);
+  const { title, description, completed = "false" } = JSON.parse(event.body);
+  console.log(".........", title, description, completed);
 
   try {
     const command = new UpdateItemCommand({
@@ -32,14 +35,16 @@ exports.handler = async (event) => {
       ExpressionAttributeValues: marshall({
         ":cm": completed,
         ":tl": title,
-        ":desc": description,
+        ":des": description,
       }),
+      ReturnValues: "ALL_NEW",
     });
 
     const data = await client.send(command);
-    const item = unmarshall(data.Item);
+    console.log("......", data);
+    // const item = unmarshall(data.Item);
     statusCode = 200;
-    responseBody = JSON.stringify(item);
+    responseBody = "Updated Successfully";
   } catch (err) {
     responseBody = `Unable to get Products: ${err}`;
     statusCode = 403;
@@ -48,7 +53,6 @@ exports.handler = async (event) => {
     statusCode: statusCode,
     //  Uncomment below to enable CORS requests
     headers: {
-      "Access-Control-Allow-Headers": "Content-Type",
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "*",
     },
